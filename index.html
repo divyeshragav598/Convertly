@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertly - PDF Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Convertly</div>
+
+    <nav>
+        <a href="#converter">Converter</a>
+        <a href="#formats">Formats</a>
+        <a href="#how">How it works</a>
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="badge">? Fast • Simple • Multi-format</div>
+
+    <h1>
+        Convert your PDFs<br>
+        <span>to almost anything.</span>
+    </h1>
+
+    <p>
+        Upload your PDF, choose the format you need,
+        complete the two-ad step and download your file.
+    </p>
+
+</section>
+
+
+<section id="converter" class="converter">
+
+    <!-- Upload Area -->
+
+    <div id="uploadArea" class="upload-area">
+
+        <div class="upload-icon">?</div>
+
+        <h2>Drop your PDF here</h2>
+
+        <p>or</p>
+
+        <button id="chooseButton">
+            Choose PDF
+        </button>
+
+        <input
+            type="file"
+            id="fileInput"
+            accept=".pdf"
+            hidden
+        >
+
+        <small>
+            PDF files only
+        </small>
+
+    </div>
+
+
+    <!-- File Information -->
+
+    <div id="fileSection" class="file-section hidden">
+
+        <div class="file-info">
+
+            <div class="pdf-icon">
+                PDF
+            </div>
+
+            <div>
+                <strong id="fileName">
+                    document.pdf
+                </strong>
+
+                <small id="fileSize">
+                    0 KB
+                </small>
+            </div>
+
+            <button id="removeButton">
+                ×
+            </button>
+
+        </div>
+
+
+        <label>
+            Convert PDF to
+        </label>
+
+        <select id="format">
+
+            <option value="docx">
+                Word (.DOCX)
+            </option>
+
+            <option value="xlsx">
+                Excel (.XLSX)
+            </option>
+
+            <option value="pptx">
+                PowerPoint (.PPTX)
+            </option>
+
+            <option value="jpg">
+                JPG Image
+            </option>
+
+            <option value="png">
+                PNG Image
+            </option>
+
+            <option value="txt">
+                Text (.TXT)
+            </option>
+
+            <option value="html">
+                HTML
+            </option>
+
+        </select>
+
+
+        <button id="convertButton" class="convert-button">
+            Convert PDF
+        </button>
+
+        <p id="status"></p>
+
+    </div>
+
+</section>
+
+
+<!-- AD MODAL -->
+
+<div id="adModal" class="modal hidden">
+
+    <div class="ad-box">
+
+        <div id="adNumber">
+            Advertisement 1 of 2
+        </div>
+
+        <h2>
+            Please wait...
+        </h2>
+
+        <div class="advertisement">
+
+            <span>
+                ADVERTISEMENT
+            </span>
+
+            <div class="ad-content">
+                Your advertisement will appear here
+            </div>
+
+            <p id="timer">
+                10 seconds
+            </p>
+
+        </div>
+
+        <button id="continueButton" disabled>
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+<section id="formats" class="formats">
+
+    <h2>Convert PDF to</h2>
+
+    <div class="format-grid">
+
+        <div>
+            ??
+            <strong>Word</strong>
+            <span>DOCX</span>
+        </div>
+
+        <div>
+            ??
+            <strong>Excel</strong>
+            <span>XLSX</span>
+        </div>
+
+        <div>
+            ???
+            <strong>PowerPoint</strong>
+            <span>PPTX</span>
+        </div>
+
+        <div>
+            ???
+            <strong>Images</strong>
+            <span>JPG / PNG</span>
+        </div>
+
+        <div>
+            ??
+            <strong>Text</strong>
+            <span>TXT</span>
+        </div>
+
+        <div>
+            ??
+            <strong>Web</strong>
+            <span>HTML</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="how" class="how">
+
+    <h2>How it works</h2>
+
+    <div class="steps">
+
+        <div>
+            <b>01</b>
+            <h3>Upload</h3>
+            <p>Select your PDF.</p>
+        </div>
+
+        <div>
+            <b>02</b>
+            <h3>Choose</h3>
+            <p>Select your output format.</p>
+        </div>
+
+        <div>
+            <b>03</b>
+            <h3>Watch 2 ads</h3>
+            <p>Complete both ad steps.</p>
+        </div>
+
+        <div>
+            <b>04</b>
+            <h3>Download</h3>
+            <p>Download your converted file.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Convertly — PDF conversion made simple
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
