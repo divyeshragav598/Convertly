@@ -1,3 +1,4 @@
+```javascript
 const fileInput = document.getElementById("fileInput");
 
 const chooseButton =
@@ -189,44 +190,45 @@ continueButton.onclick = () => {
     }
 
     else {
-    adModal.classList.add("hidden");
+        adModal.classList.add("hidden");
 
-    status.textContent = "Converting your PDF...";
+        status.textContent = "Converting your PDF...";
 
-    const formData = new FormData();
-    formData.append("file", selectedFile);
+        const formData = new FormData();
+        formData.append("file", selectedFile);
 
-    fetch("http://127.0.0.1:5000/convert", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Conversion failed");
-        }
+        fetch("https://convertly-backend-zbfe.onrender.com/convert", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Conversion failed");
+            }
 
-        return response.blob();
-    })
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob);
+            return response.blob();
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
 
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "converted.docx";
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "converted.docx";
 
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
 
-        window.URL.revokeObjectURL(url);
+            window.URL.revokeObjectURL(url);
 
-        status.textContent = "Conversion completed! Download started.";
-    })
-    .catch(error => {
-        console.error(error);
-        status.textContent =
-            "Something went wrong during conversion.";
-    });
-}
+            status.textContent = "Conversion completed! Download started.";
+        })
+        .catch(error => {
+            console.error(error);
+            status.textContent =
+                "Something went wrong during conversion.";
+        });
+    }
 
 };
+```
